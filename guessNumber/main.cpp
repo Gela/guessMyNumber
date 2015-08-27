@@ -13,6 +13,13 @@ int generate_random_number()
 	return generated_val;
 }
 
+bool compare_values(int computer_generated, int user_generated)
+{
+	if (computer_generated == user_generated)
+		return true;
+	return false;
+}
+
 int main() {
 	
 	int guess_val;
@@ -27,9 +34,17 @@ int main() {
 
 	// Improved this part to keep giving hint until the user gets it right
 	// Error handling not done yet
-	if (guess_val != generated_val)
-	{
-		std::cout << "You guessed " << guess_val << "but the computer chose " << generated_val << std::endl;
+	bool result = compare_values(guess_val, generated_val);
+
+	switch(result) {
+
+	case 0:
+		std::cout << "You did not guess the correct value." << std::endl;
+		break;
+
+	case 1:
+		std::cout << "You guessed the correct value." << std::endl;
+		break;
 	}
 
 	return 0;
