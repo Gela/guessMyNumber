@@ -2,6 +2,10 @@
 #include <string>
 #include <random>
 
+#define EQUAL 0
+#define LESS_THAN 1
+#define GREATER_THAN 2
+
 int generate_random_number()
 {
 	std::random_device rd;
@@ -16,17 +20,13 @@ int generate_random_number()
 int compare_values(int computer_generated, int user_generated)
 {
 	if (computer_generated == user_generated)
-		return 1;
+		return EQUAL;
 	else if (computer_generated < user_generated)
-		return 2;
+		return LESS_THAN;
 	else if (computer_generated > user_generated)
-		return 3;
+		return GREATER_THAN;
 }
 
-char * expected_less()
-{
-
-}
 
 int main() {
 	
@@ -44,13 +44,17 @@ int main() {
 
 	switch(compare_values(guess_val, generated_val)) {
 
-	case 0:
+	case EQUAL:
 		//add complexity here. Probably using a while loop
-		std::cout << "You did not guess the correct value." << std::endl;
+		std::cout << "You guessed the correct value." << std::endl;
 		break;
 
-	case 1:
-		std::cout << "You guessed the correct value." << std::endl;
+	case LESS_THAN:
+		std::cout << "Less than" << std::endl;
+		break;
+
+	case GREATER_THAN:
+		std::cout << "greater than" << std::endl;
 		break;
 	}
 
