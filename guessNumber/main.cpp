@@ -13,11 +13,19 @@ int generate_random_number()
 	return generated_val;
 }
 
-bool compare_values(int computer_generated, int user_generated)
+int compare_values(int computer_generated, int user_generated)
 {
 	if (computer_generated == user_generated)
-		return true;
-	return false;
+		return 1;
+	else if (computer_generated < user_generated)
+		return 2;
+	else if (computer_generated > user_generated)
+		return 3;
+}
+
+char * expected_less()
+{
+
 }
 
 int main() {
@@ -32,13 +40,12 @@ int main() {
 
 	std::cin >> guess_val;
 
-	// Improved this part to keep giving hint until the user gets it right
 	// Error handling not done yet
-	bool result = compare_values(guess_val, generated_val);
 
-	switch(result) {
+	switch(compare_values(guess_val, generated_val)) {
 
 	case 0:
+		//add complexity here. Probably using a while loop
 		std::cout << "You did not guess the correct value." << std::endl;
 		break;
 
