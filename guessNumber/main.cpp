@@ -50,11 +50,11 @@ int main() {
 		break;
 
 	case LESS_THAN:
-		std::cout << "Less than" << std::endl;
+		std::cout << "The computer guessed a value less than what you think. Try again." << std::endl;
 		break;
 
 	case GREATER_THAN:
-		std::cout << "greater than" << std::endl;
+		std::cout << "The computer guessed a value greater than what you think. Try again." << std::endl;
 		break;
 	}
 
