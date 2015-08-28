@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <random>
+#include <sstream>
 
 #define EQUAL 0
 #define LESS_THAN 1
@@ -45,18 +46,17 @@ int main() {
 	switch(compare_values(guess_val, generated_val)) {
 
 	case EQUAL:
-		//add complexity here. Probably using a while loop
+		//add complexity here
 		std::cout << "You guessed the correct value." << std::endl;
 		break;
 
 	case LESS_THAN:
-		std::cout << "The computer guessed a value less than what you think. Try again." << std::endl;
+		std::cout << "The computer guessed a value less than what you think." << std::endl;
 		break;
 
 	case GREATER_THAN:
-		std::cout << "The computer guessed a value greater than what you think. Try again." << std::endl;
+		std::cout << "The computer guessed a value greater than what you think." << std::endl;
 		break;
 	}
-
 	return 0;
 }
